@@ -6,6 +6,8 @@ export const TodosContext = createContext();
 
 const App = () => {
   const [state, dispatch] = useReducer(todosReducer, todosInitialState);
+  console.log('state', state);
+  console.log('dispatch', state);
 
   return (
     <TodosContext.Provider value={{ state, dispatch }}>

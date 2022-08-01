@@ -8,11 +8,12 @@ export const todosInitialState = {
   ],
 };
 
-export function todosReducer(state, action) {
+export const todosReducer = (state, action) => {
   switch (action.type) {
     case 'add':
       const newToDo = { id: uuidv4(), text: action.payload };
       const addedToDos = [...state.todos, newToDo];
+      console.log(addedToDos);
       return { ...state, todos: addedToDos };
     case 'delete':
       const filteredTodoState = state.todos.filter(
@@ -33,4 +34,4 @@ export function todosReducer(state, action) {
     default:
       return todosInitialState;
   }
-}
+};
