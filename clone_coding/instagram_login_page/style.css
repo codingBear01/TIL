@@ -1,0 +1,154 @@
+* {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+}
+
+body {
+  margin: 0px;
+  height: 100vh;
+  background-color: #fafafa;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  height: 90%;
+}
+
+.left {
+  width: 430px;
+  height: 700px;
+  background-image: url('./img/background.png');
+  background-repeat: no-repeat;
+  transform: scale(1.125);
+  margin-right: 40px;
+}
+
+.left_inner_img {
+  position: relative;
+  top: 28px;
+  left: 155px;
+}
+
+.right {
+  margin-top: -130px;
+}
+
+.right_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: 350px;
+  margin: 20px;
+  padding: 40px;
+  border: 1px solid rgb(219, 219, 219);
+  background-color: white;
+  font-family: -apple-system;
+}
+
+.instagram_logo {
+  padding: 0 70px 30px 70px;
+}
+
+input {
+  all: unset;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 5px;
+  background-color: rgb(250, 250, 250);
+}
+
+input:focus,
+input:hover {
+  border: 1px solid rgba(38, 38, 38, 0.4);
+}
+
+.login_btn {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(0, 149, 246, 0.3);
+  color: white;
+  text-align: center;
+}
+
+.line_wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.line {
+  width: 135px;
+  height: 0.5px;
+  background-color: rgb(219, 219, 219);
+}
+
+.line_txt {
+  padding: 0 20px;
+  font-weight: 600;
+  color: gray;
+}
+
+.facebook_login_btn {
+  margin-top: 20px;
+  border: none;
+  background: none;
+  color: rgb(56, 81, 133);
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.facebook_logo {
+  position: relative;
+  display: inline-block;
+  margin-right: 4px;
+  width: 16px;
+  height: 16px;
+  background-image: url('./img/logo_set.png');
+  background-repeat: no-repeat;
+  background-position: -414px -259px;
+}
+
+.forgot_pw {
+  padding-top: 20px;
+  color: rgb(0, 55, 107);
+  text-align: center;
+}
+
+.register_wrap {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid rgb(219, 219, 219);
+  background-color: white;
+  text-align: center;
+}
+
+.register_txt {
+  color: rgba(0, 149, 246);
+  font-weight: 600;
+}
+
+.download_txt {
+  text-align: center;
+}
+
+.app_store_wrap {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.store_icon {
+  width: 150px;
+}
