@@ -11,6 +11,7 @@ import { Container } from './components/Container';
 import { LoggedIn } from './components/state/LoggedIn';
 import { User } from './components/state/User';
 import { User2 } from './components/state/User2';
+import { Counter } from './components/state/Counter';
 
 function App() {
   // const personName = {
@@ -45,7 +46,8 @@ function App() {
       /> */}
       {/* <LoggedIn /> */}
       {/* <User /> */}
-      <User2 />
+      {/* <User2 /> */}
+      <Counter />
     </div>
   );
 }
