@@ -7,6 +7,7 @@ import { Heading } from './components/Heading';
 import { Oscar } from './components/Oscar';
 import { Button } from './components/Button';
 import { Input } from './components/Input';
+import { Container } from './components/Container';
 
 function App() {
   // const personName = {
@@ -29,9 +30,16 @@ function App() {
       <Heading>Placeholder text</Heading>
       <Oscar>
         <Heading>Oscar goes to Leonardo Dicaprio!</Heading>
-      </Oscar> */}
+      </Oscar>
       <Button handleClick={(e, id) => console.log('button clicked!', e, id)} />
       <Input value="" handleChange={(e) => console.log(e)} />
+      <Container
+        styles={{
+          border: '1px solid black',
+          padding: '1rem',
+          background: 'aqua',
+        }}
+      /> */}
     </div>
   );
 }
