@@ -20,8 +20,8 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Greet name="kang" msgCnt={20} isLogin={false} />
-      <Person name={personName} />
+      <Greet name="kang" isLogin={true} />
+      {/* <Person name={personName} />
       <PersonList names={nameList} /> */}
       <Status status="loading" />
       <Heading>Placeholder text</Heading>
