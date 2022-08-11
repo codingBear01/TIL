@@ -23,17 +23,17 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Greet name="kang" isLogin={true} />
-      <Person name={personName} />
-      <PersonList names={nameList} />
-      <Status status="loading" />
-      <Heading>Placeholder text</Heading>
-      <Oscar>
+      {/* <Greet name="kang" isLogin={true} /> */}
+      {/* <Person name={personName} /> */}
+      {/* <PersonList names={nameList} /> */}
+      {/* <Status status="loading" /> */}
+      {/* <Heading>Placeholder text</Heading> */}
+      {/* <Oscar>
         <Heading>Oscar goes to Leonardo Dicaprio!</Heading>
-      </Oscar>
-      <Button handleClick={(e, id) => console.log('button clicked!', e, id)} />
-      <Input value="" handleChange={(e) => console.log(e)} />
-      <Container
+      </Oscar> */}
+      {/* <Button handleClick={(e, id) => console.log('button clicked!', e, id)} /> */}
+      {/* <Input value="" handleChange={(e) => console.log(e)} /> */}
+      {/* <Container
         styles={{
           border: '1px solid black',
           padding: '1rem',
