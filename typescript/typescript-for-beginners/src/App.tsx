@@ -5,6 +5,8 @@ import { PersonList } from './components/PersonList';
 import { Status } from './components/Status';
 import { Heading } from './components/Heading';
 import { Oscar } from './components/Oscar';
+import { Button } from './components/Button';
+import { Input } from './components/Input';
 
 function App() {
   // const personName = {
@@ -20,14 +22,16 @@ function App() {
 
   return (
     <div className="App">
-      <Greet name="kang" isLogin={true} />
-      {/* <Person name={personName} />
-      <PersonList names={nameList} /> */}
+      {/* <Greet name="kang" isLogin={true} />
+      <Person name={personName} />
+      <PersonList names={nameList} />
       <Status status="loading" />
       <Heading>Placeholder text</Heading>
       <Oscar>
         <Heading>Oscar goes to Leonardo Dicaprio!</Heading>
-      </Oscar>
+      </Oscar> */}
+      <Button handleClick={(e, id) => console.log('button clicked!', e, id)} />
+      <Input value="" handleChange={(e) => console.log(e)} />
     </div>
   );
 }
