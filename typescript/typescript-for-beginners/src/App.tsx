@@ -16,6 +16,9 @@ import { ThemeContextProvider } from './components/context/ThemeContext';
 import { Box } from './components/context/Box';
 import { UserContextProvider } from './components/context/UserContext';
 import { User3 } from './components/context/User3';
+import { MutableRef } from './components/ref/MutableRef';
+import { DomRef } from './components/ref/DomRef';
+import { Counter2 } from './components/class/Counter';
 
 function App() {
   // const personName = {
@@ -58,6 +61,8 @@ function App() {
       {/* <UserContextProvider>
         <User3 />
       </UserContextProvider> */}
+      {/* <MutableRef /> */}
+      <Counter2 message="The count value is" />
     </div>
   );
 }
