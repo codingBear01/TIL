@@ -19,6 +19,8 @@ import { User3 } from './components/context/User3';
 import { MutableRef } from './components/ref/MutableRef';
 import { DomRef } from './components/ref/DomRef';
 import { Counter2 } from './components/class/Counter';
+import { Private } from './components/auth/Private';
+import { Profile } from './components/auth/Profile';
 
 function App() {
   // const personName = {
@@ -62,7 +64,8 @@ function App() {
         <User3 />
       </UserContextProvider> */}
       {/* <MutableRef /> */}
-      <Counter2 message="The count value is" />
+      {/* <Counter2 message="The count value is" /> */}
+      <Private isLoggedIn={true} Component={Profile} />
     </div>
   );
 }
