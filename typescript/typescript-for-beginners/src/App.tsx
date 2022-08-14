@@ -22,6 +22,7 @@ import { Counter2 } from './components/class/Counter';
 import { Private } from './components/auth/Private';
 import { Profile } from './components/auth/Profile';
 import { List } from './components/generics/List';
+import { RandomNumber } from './components/restriction/RandomNumber';
 
 function App() {
   // const personName = {
@@ -72,7 +73,7 @@ function App() {
         onClick={(item) => console.log(item)}
       />
       <List items={[1, 2, 3]} onClick={(item) => console.log(item)} /> */}
-      <List
+      {/* <List
         items={[
           {
             id: 1,
@@ -91,7 +92,8 @@ function App() {
           },
         ]}
         onClick={(item) => console.log(item)}
-      />
+      /> */}
+      <RandomNumber value={10} isPositive />
     </div>
   );
 }
