@@ -21,6 +21,7 @@ import { DomRef } from './components/ref/DomRef';
 import { Counter2 } from './components/class/Counter';
 import { Private } from './components/auth/Private';
 import { Profile } from './components/auth/Profile';
+import { List } from './components/generics/List';
 
 function App() {
   // const personName = {
@@ -65,7 +66,32 @@ function App() {
       </UserContextProvider> */}
       {/* <MutableRef /> */}
       {/* <Counter2 message="The count value is" /> */}
-      <Private isLoggedIn={true} Component={Profile} />
+      {/* <Private isLoggedIn={true} Component={Profile} /> */}
+      {/* <List
+        items={['차범근', '박지성', '손흥민']}
+        onClick={(item) => console.log(item)}
+      />
+      <List items={[1, 2, 3]} onClick={(item) => console.log(item)} /> */}
+      <List
+        items={[
+          {
+            id: 1,
+            first: 'Bruce',
+            last: 'Wayne',
+          },
+          {
+            id: 2,
+            first: 'Clark',
+            last: 'Kent',
+          },
+          {
+            id: 3,
+            first: 'Princess',
+            last: 'Diana',
+          },
+        ]}
+        onClick={(item) => console.log(item)}
+      />
     </div>
   );
 }
