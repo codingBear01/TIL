@@ -7,11 +7,13 @@ type PositiveNumber = RandomNumberType & {
   isNegative?: never;
   isZero?: never;
 };
+
 type NegativeNumber = RandomNumberType & {
   isPositive?: never;
   isNegative: boolean;
   isZero?: never;
 };
+
 type Zero = RandomNumberType & {
   isPositive?: never;
   isNegative?: never;
