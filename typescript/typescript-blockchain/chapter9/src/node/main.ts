@@ -1,4 +1,4 @@
-import { Blockchain, Block } from '../lib/bc_transactions';
+import { Blockchain } from '../lib/bc_transactions';
 
 (async function main(): Promise<void> {
   console.log('? Initializing the blockchain creating the genesis block...');
