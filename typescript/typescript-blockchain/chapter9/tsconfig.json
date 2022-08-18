@@ -1,9 +1,19 @@
+// {
+//   "compilerOptions": {
+//     "sourceMap": true,
+//     "outDir": "./dist",
+//     "target": "es6",
+//     "module": "es6",
+//     "lib": ["dom", "es6"]
+//   }
+// }
+
 {
   "compilerOptions": {
     "sourceMap": true,
     "outDir": "./dist",
-    "target": "es6",
+    "target": "es5",
     "module": "es6",
-    "lib": ["dom", "es6"]
+    "lib": ["dom", "es2017"]
   }
 }

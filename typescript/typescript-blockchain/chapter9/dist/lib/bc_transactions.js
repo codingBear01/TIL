@@ -1,3 +1,4 @@
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -7,8 +8,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { sha256 } from './universal_sha256.js'; // Imports the function for hash generation
-export class Block {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Blockchain = exports.Block = void 0;
+const universal_sha256_js_1 = require("./universal_sha256.js"); // Imports the function for hash generation
+class Block {
     constructor(previousHash, timestamp, transactions // Passes an array of transactions to the newly-created block
     ) {
         this.previousHash = previousHash;
@@ -33,11 +36,12 @@ export class Block {
                 this.timestamp +
                 JSON.stringify(this.transactions) +
                 nonce;
-            return sha256(data); // Invokes the function that uses the crypto API and generates the hash
+            return (0, universal_sha256_js_1.sha256)(data); // Invokes the function that uses the crypto API and generates the hash
         });
     }
 }
-export class Blockchain {
+exports.Block = Block;
+class Blockchain {
     constructor() {
         this._chain = [];
         this._pendingTransactions = [];
@@ -76,4 +80,5 @@ export class Blockchain {
         });
     }
 }
+exports.Blockchain = Blockchain;
 //# sourceMappingURL=bc_transactions.js.map

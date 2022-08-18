@@ -1,3 +1,4 @@
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -7,6 +8,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.sha256 = void 0;
 // The function to be used in the Node.js runtime
 function sha256_node(data) {
     const crypto = require('crypto');
@@ -29,7 +32,7 @@ function sha256_browser(data) {
     });
 }
 // Exports the hashing function for Node
-export const sha256 = 
+exports.sha256 = 
 // Checks if the runtime has a global variable window
 typeof window === 'undefined' ? sha256_node : sha256_browser; // Exports the hashing function for browsers
 //# sourceMappingURL=universal_sha256.js.map
