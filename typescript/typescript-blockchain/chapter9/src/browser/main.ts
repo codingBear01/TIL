@@ -58,7 +58,7 @@ const transferBtn = document.querySelector('#transfer') as HTMLButtonElement;
     // Mines the block and renders it on the web page
     statusEl.textContent = Status.MineInProgress;
     toggleState(true, true);
-    await Blockchain.minePendingTransactions(); // Creates a new block, calculates the hash, and adds it to the blockchain
+    await blockchain.minePendingTransactions(); // Creates a new block, calculates the hash, and adds it to the blockchain
 
     pendingTransactionsEl.textContent =
       'No pending transactions at the moment.';
