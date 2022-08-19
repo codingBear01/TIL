@@ -1,7 +1,7 @@
-import { Blockchain } from '../lib/bc_transactions';
+import { Blockchain } from '../lib/bc_transactions.js';
 
 (async function main(): Promise<void> {
-  console.log('? Initializing the blockchain creating the genesis block...');
+  console.log('⏳ Initializing the blockchain creating the genesis block...');
 
   const bc = new Blockchain(); // Create a new blockchain
 
@@ -21,4 +21,4 @@ import { Blockchain } from '../lib/bc_transactions';
 
   // Prints the content of the blockchain
   console.log(JSON.stringify(bc, null, 2));
-});
+})();
