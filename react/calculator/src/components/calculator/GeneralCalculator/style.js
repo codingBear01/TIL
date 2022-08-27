@@ -5,7 +5,7 @@ export const CalBody = styled.div`
   ${S.alignments.aCenterJCenter}
   flex-direction: column;
   margin: 50% auto;
-  padding: 15px;
+  padding: 25px;
   width: 80%;
   border-radius: 20px;
   background-color: ${S.colors.black};
@@ -17,13 +17,21 @@ export const CalInputArea = styled.div`
   flex-direction: column;
   padding-bottom: 15px;
   width: 100%;
-  height: 200px;
+  height: 50%;
 `;
 
-export const CalInput = styled.input`
+export const CalInput = styled.div`
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  padding: 20px;
   width: 100%;
-  height: 50%;
+  height: 25%;
+  border: 0px;
+  background-color: ${S.colors.black};
   text-align: right;
+  color: ${S.colors.white};
 `;
 
 export const CalControlButtonArea = styled.div`

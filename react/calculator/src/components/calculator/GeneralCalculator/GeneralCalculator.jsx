@@ -7,8 +7,12 @@ const GeneralCalculator = () => {
   return (
     <C.CalBody>
       <C.CalInputArea>
-        <C.CalInput />
-        <C.CalInput />
+        <C.CalInput>
+          <span>ddd</span>
+        </C.CalInput>
+        <C.CalInput>
+          <span>ddd</span>
+        </C.CalInput>
       </C.CalInputArea>
       <C.CalControlButtonArea>
         <MdOutlineTimer style={C.controlButtonStyle} />
