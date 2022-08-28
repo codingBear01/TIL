@@ -1,4 +1,6 @@
 export const alignments = {
-  aCenterJCenter:
-    'display: flex; align-items: center; justify-content: center;',
+  center: 'display: flex; align-items: center; justify-content: center;',
+  flexEnd: 'display: flex; align-items: flex-end; justify-content: flex-end;',
+  spaceBetween:
+    'display: flex; align-items: center; justify-content: space-between;',
 };
