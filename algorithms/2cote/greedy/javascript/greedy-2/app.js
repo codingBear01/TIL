@@ -4,10 +4,10 @@ const input = fs.readFileSync(filePath).toString().trim().split('\n');
 
 /* input 
 5 8 3
-2 4 5 4 6
+2 4 5 4 6 // 46
 
 5 7 2
-3 4 3 4 3
+3 4 3 4 3 // 28
 */
 
 const n = +input[0].split(' ')[0]; // 배열의 크기

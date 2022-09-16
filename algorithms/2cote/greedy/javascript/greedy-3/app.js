@@ -6,11 +6,11 @@ const input = fs.readFileSync(filePath).toString().trim().split('\n');
 3 3
 3 1 2
 4 1 4
-2 2 2
+2 2 2 // 2
 
 2 4
 7 3 1 8
-3 3 3 4
+3 3 3 4 // 3
 */
 
 const n = +input[0].split(' ')[0]; // 행
