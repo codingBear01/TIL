@@ -15,29 +15,28 @@ const m = +input[0].split(' ')[1]; // 더하기 실행 횟수
 const k = +input[0].split(' ')[2]; // 연속 더하기 한계 횟수
 const data = input[1].split(' ').map((val) => +val);
 
-// function mySolution(_n, _m, _k, _arr) {
-//   let ans = [];
-//   _arr = _arr.sort((a, b) => b - a);
-//   const max = _arr[0];
-//   const next = _arr[1];
+function mySolution(_n, _m, _k, _arr) {
+  let ans = [];
+  _arr = _arr.sort((a, b) => b - a);
+  const max = _arr[0];
+  const next = _arr[1];
 
-//   if (max > next) {
-//     while (ans.length < _m) {
-//       for (let i = 0; i < _k; i++) {
-//         ans.push(max);
-//       }
-//       ans.push(next);
-//     }
-//   } else if (max === next) {
-//     while (ans.length < _m) {
-//       ans.push(max);
-//     }
-//   }
+  if (max > next) {
+    while (ans.length < _m) {
+      for (let i = 0; i < _k; i++) {
+        ans.push(max);
+      }
+      ans.push(next);
+    }
+  } else if (max === next) {
+    while (ans.length < _m) {
+      ans.push(max);
+    }
+  }
 
-//   return ans.reduce((prev, curr) => prev + curr, 0);
-// }
-
-// console.log(mySolution(n, m, k, data));
+  return ans.reduce((prev, curr) => prev + curr, 0);
+}
+console.log('my sol', mySolution(n, m, k, data));
 
 function answer(_n, _m, _k, _arr) {
   _arr.sort((a, b) => a - b);
@@ -60,4 +59,4 @@ function answer(_n, _m, _k, _arr) {
   return ret;
 }
 
-console.log(answer(n, m, k, data));
+console.log('ans', answer(n, m, k, data));
