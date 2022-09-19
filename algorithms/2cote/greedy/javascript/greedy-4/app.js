@@ -47,8 +47,7 @@ function simpleAnswer(_n, _k) {
       _n -= 1;
       cnt++;
     }
-    tmp = _n / _k;
-    _n = tmp;
+    _n = Math.floor(_n / _k);
     cnt++;
   }
 
@@ -65,17 +64,15 @@ function normalAnswer(_n, _k) {
   let ret = 0;
 
   while (true) {
-    target = (_n % _k) * _k;
+    target = Math.floor(_n / _k) * _k;
     ret += _n - target;
     _n = target;
 
     if (_n < _k) break;
 
     ret++;
-    tmp = _n / _k;
-    _n = tmp;
+    _n = Math.floor(_n / _k);
   }
-  console.log(ret);
 
   ret += _n - 1;
 
