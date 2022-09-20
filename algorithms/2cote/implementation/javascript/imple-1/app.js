@@ -49,7 +49,7 @@ function answer(_n, _data) {
       }
     }
 
-    if (nx < 1 || y < 1 || nx > n || ny > n) continue;
+    if (nx < 1 || y < 1 || nx > _n || ny > _n) continue;
 
     x = nx;
     y = ny;
