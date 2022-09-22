@@ -37,7 +37,6 @@ const GeneralCalculator = () => {
     if (inputValChecker(inputNumber, val)) {
       setInputNumber(inputNumber + val);
     }
-    console.log(inputNumber);
 
     setIsTotal(false);
   };
@@ -185,7 +184,6 @@ const GeneralCalculator = () => {
 
   const handleCalHistoryToggle = () => {
     setCalHistoryToggle(!calHistoryToggle);
-    console.log(calHistories);
   };
 
   return (
