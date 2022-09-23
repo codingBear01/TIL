@@ -22,38 +22,38 @@ let direction = +splited[2]; // 0: 북쪽, 1: 동쪽, 2: 남쪽, 3: 서쪽
 d[x][y] = 1;
 // 전체 맵 정보 입력받기
 const map = input.slice(2).map((val) => val.split(' ').map((val) => +val));
-
-// 북, 동, 남, 서 방향 정의
+// 북, 동, 남, 서 움직일 방향 정의
 const dx = [-1, 0, 1, 0];
 const dy = [0, 1, 0, -1];
 
 // 왼쪽으로 회전
-function turn_left() {
-  direction -= 1;
-  if (direction === -1) {
-    direction = 3;
-  }
-}
 
 function answer(_x, _y, _d, _dx, _dy, _map, _direction) {
   // 시뮬레이션 시작
   let count = 1;
   let turn_time = 0;
 
-  while (true) {
-    // 왼쪽으로 회전
-    // turn_left();
-    _direction--;
+  function turn_left() {
+    _direction -= 1;
     if (_direction === -1) {
       _direction = 3;
     }
+  }
+
+  while (true) {
+    // 왼쪽으로 회전
+    turn_left();
+    console.log('direct', _direction);
+    console.log('x', _x);
+    console.log('y', _y);
     nx = _x + _dx[_direction];
     ny = _y + _dy[_direction];
+
     // 회전한 이후 정면에 가보지 않은 칸이 존재하는 경우 이동
     if (_d[nx][ny] === 0 && _map[nx][ny] === 0) {
       _d[nx][ny] = 1;
       _x = nx;
-      _y = nx;
+      _y = ny;
       count++;
       turn_time = 0;
       continue;
@@ -79,39 +79,3 @@ function answer(_x, _y, _d, _dx, _dy, _map, _direction) {
   return count;
 }
 console.log('ans', answer(x, y, d, dx, dy, map, direction));
-
-// let count = 1;
-// let turn_time = 0;
-
-// while (true) {
-//   // 왼쪽으로 회전
-//   turn_left();
-//   nx = x + dx[direction];
-//   ny = y + dy[direction];
-//   // 회전한 이후 정면에 가보지 않은 칸이 존재하는 경우 이동
-//   if (d[nx][ny] === 0 && map[nx][ny] === 0) {
-//     d[nx][ny] = 1;
-//     x = nx;
-//     y = nx;
-//     count++;
-//     turn_time = 0;
-//     continue;
-//     // 회전한 이후 정면에 가보지 않은 칸이 없거나 바다인 경우
-//   } else {
-//     turn_time++;
-//   }
-//   // 네 방향 모두 갈 수 없는 경우
-//   if (turn_time === 4) {
-//     nx = x - dx[direction];
-//     ny = y - dy[direction];
-//     // 뒤로 갈 수 있다면 이동하기
-//     if (map[nx][ny] === 0) {
-//       x = nx;
-//       y = ny;
-//     } else {
-//       break;
-//     }
-//     turn_time = 0;
-//   }
-// }
-// console.log(count);
