@@ -26,13 +26,11 @@ const map = input.slice(2).map((val) => val.split(' ').map((val) => +val));
 const dx = [-1, 0, 1, 0];
 const dy = [0, 1, 0, -1];
 
-// 왼쪽으로 회전
-
 function answer(_x, _y, _d, _dx, _dy, _map, _direction) {
   // 시뮬레이션 시작
   let count = 1;
   let turn_time = 0;
-
+  // 왼쪽으로 회전
   function turn_left() {
     _direction -= 1;
     if (_direction === -1) {
@@ -43,9 +41,6 @@ function answer(_x, _y, _d, _dx, _dy, _map, _direction) {
   while (true) {
     // 왼쪽으로 회전
     turn_left();
-    console.log('direct', _direction);
-    console.log('x', _x);
-    console.log('y', _y);
     nx = _x + _dx[_direction];
     ny = _y + _dy[_direction];
 
