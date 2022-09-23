@@ -10,3 +10,12 @@ stack.push(4);
 stack.pop();
 
 console.log(stack);
+console.log(stack.reverse());
+
+// const reversedStack = [];
+
+// for (let i = 0; i < stack.length; i++) {
+//   reversedStack.push(stack[stack.length - (i + 1)]);
+// }
+
+// console.log(reversedStack);
