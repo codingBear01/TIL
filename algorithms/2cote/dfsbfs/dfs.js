@@ -29,7 +29,7 @@ const adjaList = () => {
 };
 console.log('adjaList', adjaList());
 
-console.log('👇👇👇👇👇dfs👇👇👇👇👇');
+console.log('👇👇👇👇👇dfs normal ver. by recursion👇👇👇👇👇');
 // 각 노드가 연결된 정보를 배열으로 표현(2차원 배열)
 const graph = [
   [],
@@ -52,10 +52,9 @@ const dfs = (graph, v, visited) => {
   for (let i of graph[v]) {
     console.log('graph', graph[v]);
     console.log('i', i);
-    console.log('visited', visited[i]);
+    console.log('visited', visited);
+    console.log('visited[i]', visited[i]);
     if (!visited[i]) dfs(graph, i, visited);
   }
 };
 dfs(graph, 1, visited);
-
-console.log('👇👇👇👇👇bfs👇👇👇👇👇');
