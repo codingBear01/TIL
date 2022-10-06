@@ -42,7 +42,7 @@ const graph = [
   [2, 6, 8],
   [1, 7],
 ];
-const visited = new Array(9).fill(false);
+const visited = new Array(graph.length).fill(false);
 
 const dfs = (graph, v, visited) => {
   // 현재 노드를 방문 처리
