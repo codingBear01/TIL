@@ -33,6 +33,7 @@ const solution = (n, m, graph) => {
     return false;
   };
 
+  // 모든 위치에 음료수 채우기
   let result = 0;
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < m; j++) {
@@ -42,6 +43,7 @@ const solution = (n, m, graph) => {
       }
     }
   }
+  // 정답 출력
   return result;
 };
 console.log(solution(n, m, graph));
