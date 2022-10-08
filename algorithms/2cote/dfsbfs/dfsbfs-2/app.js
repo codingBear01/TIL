@@ -7,7 +7,10 @@ const m = +input[0].split(' ')[1]; // 가로
 // 2차원 배열로 맵 정보 입력받기
 const graph = [];
 for (let i = 1; i < input.length; i++) {
-  const nums = input[i].split('').map((val) => +val);
+  const nums = input[i]
+    .split('')
+    .filter((val) => !isNaN(parseInt(val)))
+    .map((val) => +val);
   graph.push(nums);
 }
 
@@ -15,7 +18,7 @@ for (let i = 1; i < input.length; i++) {
 dx = [-1, 1, 0, 0];
 dy = [0, 0, -1, 1];
 
-const solution = (x, y, n, m, graph) => {
+const bfs = (x, y, n, m, graph) => {
   // 큐 구현을 위해 빈 배열을 선언
   const queue = [];
   queue.push([0, 0]);
@@ -43,4 +46,4 @@ const solution = (x, y, n, m, graph) => {
   return graph[n - 1][m - 1];
 };
 
-console.log(solution(0, 0, n, m, graph));
+console.log(bfs(0, 0, n, m, graph));

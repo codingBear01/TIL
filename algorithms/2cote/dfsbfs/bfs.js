@@ -18,7 +18,7 @@ const bfs = (graph, start, visited) => {
   // 현재 노드를 방문 처리
   visited[start] = true;
   // 큐가 빌 때까지 반복해서 실행
-  while (queue.length !== 0) {
+  while (queue.length > 0) {
     // 큐에서 하나의 원소를 뽑아 출력
     const v = queue.shift();
     console.log('v', v);

@@ -8,7 +8,10 @@ const m = +input[0].split(' ')[1]; // 가로
 // 2차원 배열의 맵 정보 입력받기
 const graph = [];
 for (let i = 1; i < input.length; i++) {
-  const nums = input[i].split('').map((val) => +val);
+  const nums = input[i]
+    .split('')
+    .filter((val) => !isNaN(parseInt(val)))
+    .map((val) => +val);
   graph.push(nums);
 }
 
