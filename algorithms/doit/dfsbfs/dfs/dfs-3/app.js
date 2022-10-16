@@ -5,6 +5,10 @@ const filePath = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
 // const filePath = process.platform === 'linux' ? '/dev/stdin' : './input4.txt';
 const input = fs.readFileSync(filePath).toString().trim().split('\n');
 
+/*
+주어진 모든 노드에 DFS를 수행하고 재귀의 깊이가 5 이상(S개의 노드가 재귀 형태로 연결)이면 1, 아니 라면 0을 출력합니다.
+*/
+
 const n = +input[0].split(' ')[0]; // 노드 개수
 const m = +input[0].split(' ')[1]; // 에지 개수
 const visited = new Array(n).fill(false); // 방문 기록 저장 배열
