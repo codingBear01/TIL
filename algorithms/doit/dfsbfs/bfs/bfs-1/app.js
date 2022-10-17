@@ -34,6 +34,7 @@ const solution = (n, e, s, nums) => {
   // dfs
   const dfsVisited = new Array(n + 1).fill(false);
   const dfsResult = [];
+  console.log(dfsVisited);
   const dfs = (v) => {
     if (dfsVisited[v]) return;
     dfsVisited[v] = true;

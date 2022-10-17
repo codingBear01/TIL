@@ -34,6 +34,7 @@ const solution = (n, m, visited) => {
   const dfs = (v) => {
     if (visited[v]) return;
     visited[v] = true;
+    console.log(visited);
     for (let i = 0; i < graph[v].length; i++) {
       const next = graph[v][+i];
       /* 연결 노드 중 방문하지 않았던 노드만 탐색 */
