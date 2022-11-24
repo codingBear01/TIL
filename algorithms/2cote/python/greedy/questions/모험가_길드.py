@@ -56,15 +56,14 @@ count = 2
 공포도 3
 현재 모험가 수 2
 """
+n = int(input())
+data = list(map(int, input().split()))
+data.sort()
 
 
-def exampleAnswer():
-    n = int(input())
-    data = list(map(int, input().split()))
-    data.sort()  # [1, 2, 2, 2, 3]
-
-    result = 0
-    count = 0
+def solution(n, data):
+    result = 0  # 총 그룹의 수
+    count = 0  # 현재 그룹에 포함된 모험가의 수
 
     for i in data:  # 공포도를 낮은 것부터 하나씩 확인하며
         count += 1  # 현재 그룹에 해당 모험가 포함시키기
@@ -74,4 +73,4 @@ def exampleAnswer():
     return result
 
 
-print("exampleAnswer", exampleAnswer())
+print("solution", solution(n, data))
