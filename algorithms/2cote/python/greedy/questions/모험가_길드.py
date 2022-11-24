@@ -37,29 +37,39 @@ count = 2
 
 4회전, 5회전
 현재 탐색 중인 공포도에 현재 그룹에 포함된 모험가 수가 미치지 못하므로 그룹 결성되지 못하고 종료됨.
+
+1회차
+공포도 1
+현재 모험가 수 1
+총 그룹 수 1
+2회차
+공포도 2
+현재 모험가 수 1
+3회차
+공포도 2
+현재 모험가 수 2
+총 그룹 수 2
+4회차
+공포도 2
+현재 모험가 수 1
+5회차
+공포도 3
+현재 모험가 수 2
 """
 
 
 def exampleAnswer():
-    # n = int(input())
-    # data = list(map(int, input().split()))
-    n = 5
-    data = [2, 3, 1, 2, 2]
+    n = int(input())
+    data = list(map(int, input().split()))
     data.sort()  # [1, 2, 2, 2, 3]
 
     result = 0
     count = 0
-    cnt = 0
 
     for i in data:  # 공포도를 낮은 것부터 하나씩 확인하며
-        cnt += 1
-        print(f"{cnt}회차")
-        print("공포도", i)
         count += 1  # 현재 그룹에 해당 모험가 포함시키기
-        print("현재 모험가 수", count)
         if count >= i:  # 현재 그룹에 포함된 모험가의 수가 현재의 공포도 이상이라면, 그룹 결성
             result += 1  # 총 그룹의 수 증가시키기
-            print("총 그룹 수", result)
             count = 0  # 현재 그룹에 포함된 모험가의 수 초기화
     return result
 
