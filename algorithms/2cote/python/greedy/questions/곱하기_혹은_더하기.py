@@ -27,7 +27,8 @@ def mySolution():
     result = 0
 
     for c in s:
-        if result == 0 or c == 0:  # 1이하인 경우는 더하기가 더 큰 수를 만드는데 그 점을 간과함.
+        # 1이하인 경우는 더하기가 더 큰 수를 만드는데 그 점을 간과함.
+        if result == 0 or c == 0:
             result += c
         else:
             result *= c
@@ -40,6 +41,7 @@ print("mySolution", mySolution())
 
 def exampleAnswer():
     data = input()
+    # 첫 번째 문자를 숫자로 변경하여 대입
     result = int(data[0])
 
     for i in range(1, len(data)):
