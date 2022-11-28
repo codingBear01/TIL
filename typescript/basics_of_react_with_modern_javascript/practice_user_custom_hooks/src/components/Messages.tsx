@@ -1,7 +1,13 @@
-import React from 'react';
+/* Libraries */
+import { useContext } from 'react';
+/* Context */
+import { IsLoadingContext } from '../providers';
 
 function Messages() {
-    return <div>Messages</div>;
+    /* Context */
+    const { isLoading } = useContext(IsLoadingContext);
+
+    return <>{isLoading && <span className="text-red-600">로딩 중...</span>}</>;
 }
 
 export default Messages;
