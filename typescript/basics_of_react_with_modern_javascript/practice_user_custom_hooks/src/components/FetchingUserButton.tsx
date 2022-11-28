@@ -1,5 +1,5 @@
 /* Libraries */
-import { useContext } from 'react';
+import { useContext, memo, useCallback } from 'react';
 /* Context */
 import {
     IsFetchingUsersCompletedContext,
@@ -28,7 +28,9 @@ const USERS = [
     },
 ];
 
-function FetchingUserButton() {
+const FetchingUserButton = memo(() => {
+    console.log('FetchingUserButton rendering!');
+
     /* Context */
     const { setIsLoading } = useContext(IsLoadingContext);
     const { setUsers } = useContext(UsersContext);
@@ -37,19 +39,18 @@ function FetchingUserButton() {
     );
 
     /* Handlers */
-    const fetchUsers = () => {
+    const fetchUsers = useCallback(() => {
         setTimeout(() => {
             setUsers(USERS);
             setIsLoading(false);
             setIsFetchingUsersCompleted(true);
         }, 500);
-    };
+    }, []);
 
-    const onClickFetchUsers = () => {
+    const onClickFetchUsers = useCallback(() => {
         setIsLoading(true);
-        setIsFetchingUsersCompleted(false);
         fetchUsers();
-    };
+    }, []);
 
     return (
         <button
@@ -60,6 +61,6 @@ function FetchingUserButton() {
             Fetch Users
         </button>
     );
-}
+});
 
 export default FetchingUserButton;

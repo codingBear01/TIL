@@ -1,5 +1,5 @@
 /* Libraries */
-import { useContext } from 'react';
+import { useContext, memo, useCallback } from 'react';
 /* Components */
 import UserListItem from './UserListItem';
 /* Context */
@@ -9,7 +9,9 @@ import {
     UsersContext,
 } from './../providers/';
 
-function UserList() {
+const UserList = memo(() => {
+    console.log('UserList rendering!');
+
     /* Context */
     const { setIsLoading } = useContext(IsLoadingContext);
     const { users, setUsers } = useContext(UsersContext);
@@ -17,11 +19,11 @@ function UserList() {
         useContext(IsFetchingUsersCompletedContext);
 
     /* Handlers */
-    const onClickReset = () => {
+    const onClickReset = useCallback(() => {
         setUsers([]);
         setIsLoading(false);
         setIsFetchingUsersCompleted(false);
-    };
+    }, []);
 
     return (
         <>
@@ -43,6 +45,6 @@ function UserList() {
             )}
         </>
     );
-}
+});
 
 export default UserList;

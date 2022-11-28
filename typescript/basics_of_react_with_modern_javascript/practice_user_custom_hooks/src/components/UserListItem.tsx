@@ -1,7 +1,11 @@
+/* Libraries */
+import { memo } from 'react';
 /* Interfaces */
 import { User } from '../interfaces';
 
-function UserListItem({ user }: User) {
+const UserListItem = memo(({ user }: User) => {
+    console.log('UserListItem rendering!');
+
     return (
         <li>
             <span>번호: {user.id}</span>
@@ -11,6 +15,6 @@ function UserListItem({ user }: User) {
             <span>나이: {user.age}</span>
         </li>
     );
-}
+});
 
 export default UserListItem;
