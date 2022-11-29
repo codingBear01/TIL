@@ -17,8 +17,8 @@ expected output
 
 먼저 입력값을 오름차순으로 정렬함.
 화폐 단위가 작은 순서대로 동전을 확인하며 현재 확인하는 동전으로 target 금액을 만들 수 있는지 확인하면 됨.
-
-
+즉 현재 확인하는 동전이 target 금액 이하인지 확인하면 됨.
+만약 해당 금액을 만들 수 있다면 해당 금액을 target에 더한 다음 다음 동전을 탐색.
 """
 n = int(input())
 data = list(map(int, input().split()))
