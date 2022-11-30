@@ -60,8 +60,8 @@ def exampleAnswer(n, m, data):
 
     # 1부터 m까지 각 무게에 대해 처리
     for i in range(1, m + 1):
-        n -= array[i]  # 무게가 i인 볼링공의 개수(A가 선택할 수 있는 개수) 제외
-        result += array[i] * n  # B가 선택하는 경우의 수와 곱하기
+        n -= array[i]  # B가 선택할 수 있는 경우의 수. 무게가 i인 볼링공의 개수(A가 선택할 수 있는 개수) 제외
+        result += array[i] * n  # A가 선택한 무게의 볼링공 개수와 B가 선택하는 경우의 수와 곱하기
 
     return result
 
