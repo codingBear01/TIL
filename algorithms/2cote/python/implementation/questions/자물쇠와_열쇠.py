@@ -51,7 +51,7 @@ def mySolution(key, lock):
 print("mySolution", mySolution(key, lock))
 
 
-def exampleAnswer(key, lock):
+def exampleAnswer1(key, lock):
     # 2차원 리스트 90도 회전
     def rotate_a_matrix_by_90_degree(a):
         n = len(a)  # 행 길이 계산
@@ -84,23 +84,74 @@ def exampleAnswer(key, lock):
         for j in range(n):
             new_lock[i + n][j + n] = lock[i][j]
 
-    # 4가지 방향에 대해서 확인
+    # 열쇠를 4번 돌려가며 자물쇠와 들어맞는지 확인
     for rotation in range(4):
         key = rotate_a_matrix_by_90_degree(key)  # 열쇠 회전
+        # key = list(zip(*key[::-1]))  # 열쇠 회전
         for x in range(n * 2):
             for y in range(n * 2):
                 # 자물쇠에 열쇠 끼워 넣기
                 for i in range(m):
                     for j in range(m):
-                        new_lock[i + x][j + y] += key[i][j]
+                        new_lock[x + i][y + j] += key[i][j]
                 # 자물쇠에 열쇠가 들어맞는지 검사
-                if check(new_lock) == True:
+                if check(new_lock):
                     return True
                 # 자물쇠에서 열쇠 다시 빼기
                 for i in range(m):
                     for j in range(m):
-                        new_lock[i + x][j + y] -= key[i][j]
+                        new_lock[x + i][y + j] -= key[i][j]
     return False
 
 
-print("exampleAnswer", exampleAnswer(key, lock))
+print("exampleAnswer1", exampleAnswer1(key, lock))
+
+
+def exampleAnswer2(key, lock):
+    def rotate(arr, key, rot, r, c, m):
+        for i in range(m):
+            for j in range(m):
+                if rot == 0:  # 회전 X
+                    arr[r + i][c + j] += key[i][j]
+                elif rot == 1:  # 90도 회전
+                    arr[r + i][c + j] += key[m - 1 - j][i]
+                elif rot == 2:  # 180도 회전
+                    arr[r + i][c + j] += key[m - 1 - i][m - 1 - j]
+                else:  # 270도 회전
+                    arr[r + i][c + j] += key[j][m - 1 - i]
+
+    def check(arr, offset, n):
+        for i in range(n):
+            for j in range(n):
+                if arr[offset + i][offset + j] != 1:
+                    return False
+        return True
+
+    # 자물쇠 중앙에서 열쇠가 떨어진 거리
+    offset = len(key) - 1
+    n = len(lock)
+    m = len(key)
+
+    # 열쇠의 최대 탐색 범위는 offset + 자물쇠 길이
+    for r in range(offset + n):
+        for c in range(offset + n):
+            # 열쇠를 총 4번 회전
+            for rot in range(4):
+                # 최대 크기는 60(20 * 3)인데 열쇠와 자물쇠는 최소 1칸은 겹쳐야 하므로 2를 빼서 전체 배열 생성
+                arr = [[0] * 58 for _ in range(58)]
+                # 배열 중심부에 자물쇠 생성
+                for i in range(n):
+                    for j in range(n):
+                        arr[offset + i][offset + j] = lock[i][j]
+
+                # 열쇠 회전
+                rotate(arr, key, rot, r, c, m)
+
+                # 열쇠가 자물쇠에 들어맞는지 확인
+                if check(arr, offset, n):
+                    return True
+
+    return False
+
+
+print("exampleAnswer2", exampleAnswer2(key, lock))
