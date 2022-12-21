@@ -104,7 +104,7 @@ def exampleAnswer(n):
         stack.append(x)
         
     def pop():
-        return - 1 if not stack else stack.pop()
+        return -1 if not stack else stack.pop()
     
     def size():
         return len(stack)
