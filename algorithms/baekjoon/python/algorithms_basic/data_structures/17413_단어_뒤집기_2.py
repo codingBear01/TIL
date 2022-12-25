@@ -15,7 +15,7 @@ def answer1():
             i += 1 # 닫힌 괄호를 만난 후 i 1증가
         elif s[i].isalnum():
             start = i
-            while i < len(s)  and s[i].isalnum():
+            while i < len(s) and s[i].isalnum():
                 i += 1
             tmp = s[start:i] # 태그가 아닌 단어를 뒤집는다.
             tmp.reverse()
@@ -118,5 +118,6 @@ def answer4():
         result.append(''.join(stack))
     
     return ''.join(result)
+  
 print('answer4', answer4())
 
