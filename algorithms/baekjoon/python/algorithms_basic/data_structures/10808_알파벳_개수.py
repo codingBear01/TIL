@@ -1,8 +1,7 @@
 import string
 import sys
 
-# data = sys.stdin.readline().rstrip()
-data = "baekjoon"
+data = sys.stdin.readline().rstrip()
 
 # arr
 def mySolution1(data):
