@@ -156,18 +156,18 @@ console.log('=====한정된 다형성=====');
 // type Suqare = HasSides & SidesHaveLength;
 // let suqare: Suqare = { numberOfSides: 4, sideLength: 3 };
 // logPerimeter(suqare);
-console.log('=====한정된 다형성으로 인수의 개수 정의하기=====');
-// function call(f: (...args: unknown[]) => unknown, ...args: unknown[]): unknown {
+// console.log('=====한정된 다형성으로 인수의 개수 정의하기=====');
+// // function call(f: (...args: unknown[]) => unknown, ...args: unknown[]): unknown {
+// //     return f(...args);
+// // }
+// function call<T extends unknown[], R>(f: (...args: T) => R, ...args: T): R {
+//     console.log('f', f);
+//     console.log('args', args);
 //     return f(...args);
 // }
-function call(f, ...args) {
-    console.log('f', f);
-    console.log('args', args);
-    return f(...args);
-}
-function fill(length, value) {
-    console.log('length', length);
-    console.log('value', value);
-    return Array.from({ length }, () => value);
-}
-console.log(call(fill, 10, 'a'));
+// function fill(length: number, value: string): string[] {
+//     console.log('length', length);
+//     console.log('value', value);
+//     return Array.from({ length }, () => value);
+// }
+// console.log(call(fill, 10, 'a'));
