@@ -11,8 +11,7 @@ z 122
 """
 import sys
 
-# data = sys.stdin.readline().rstrip()
-data = "Baekjoon Online Judge"
+data = sys.stdin.readline().rstrip()
 
 
 def mySolution(data):
