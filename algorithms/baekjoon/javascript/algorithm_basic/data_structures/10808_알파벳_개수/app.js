@@ -43,3 +43,22 @@ const solution3 = (data) => {
 
 console.log('solution3');
 console.log(solution3(input));
+
+const solution4 = (data) => {
+    let map = new Map();
+
+    for (let i = 97; i <= 122; i++) {
+        map.set(i, 0);
+    }
+
+    for (let i of data) {
+        const ascii = i.charCodeAt();
+
+        if (map.has(ascii)) map.set(ascii, map.get(ascii) + 1);
+    }
+
+    return Array.from(map.values()).join(' ');
+};
+
+console.log('solution4');
+console.log(solution4(input));
