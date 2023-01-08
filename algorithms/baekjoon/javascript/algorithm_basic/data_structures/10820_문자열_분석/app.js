@@ -21,13 +21,13 @@ console.log('solution1');
 solution1(input);
 
 const solution2 = (data) => {
-    const t = input.filter((str) => str.length < 1);
+    const t = data.filter((str) => str.length < 1);
 
     if (t.length) {
-        input.splice(input.indexOf(t[0]), 1);
+        data.splice(data.indexOf(t[0]), 1);
     }
 
-    input.forEach((str) => {
+    data.forEach((str) => {
         const lower = str.length - str.replace(/[a-z]/g, '').length;
         const upper = str.length - str.replace(/[A-Z]/g, '').length;
         const num = str.length - str.replace(/[0-9]/g, '').length;
