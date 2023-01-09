@@ -8,14 +8,8 @@ const solution1 = (data) => {
 
     let result = '';
     while (n) {
-        const remainder = n % -2;
-        if (remainder) {
-            result = '1' + result;
-            n = Math.floor(n / -2) + 1;
-        } else {
-            result = '0' + result;
-            n = Math.floor(n / -2);
-        }
+        result = Math.abs(n % -2) + result;
+        n = Math.ceil(n / -2);
     }
 
     return result;
