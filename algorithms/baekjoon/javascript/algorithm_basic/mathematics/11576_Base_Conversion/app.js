@@ -8,15 +8,18 @@ let [jinBeops, m, nums] = fs
     .map((val) => val.split(' ').map(Number));
 
 const solution1 = (a, b, m, nums) => {
+    // a진법 -> 10진법
     const reversed = nums.reverse();
     let ten = 0;
-    for (let i = 0; i < reversed.length; i++) ten += reversed[i] * a ** i;
+    for (let i in reversed) ten += reversed[i] * a ** i;
 
+    // 10진법 -> b진법
     result = '';
     while (ten) {
         result = (ten % b) + ' ' + result;
         ten = Math.floor(ten / b);
     }
+
     return result.trim();
 };
 

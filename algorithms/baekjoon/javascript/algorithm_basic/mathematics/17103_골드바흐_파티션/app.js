@@ -19,11 +19,8 @@ const solution1 = (t, data) => {
     let result = '';
     for (let num of data) {
         let cnt = 0;
-        console.log('num', num);
         for (let j = 2; j <= Math.floor(num / 2); j++)
             if (prime[j] && prime[num - j]) {
-                console.log('j', j);
-                console.log('num - j', num - j);
                 cnt++;
             }
         result += String(cnt) + '\n';
